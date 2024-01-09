@@ -1,4 +1,4 @@
-# expense-tracker-vue
+# expense-tracker-vue (now isn't responsive with a full devices only pc,tablet and some phones) Next time he will responsive
 
 This template should help get you started developing with Vue 3 in Vite.
 
