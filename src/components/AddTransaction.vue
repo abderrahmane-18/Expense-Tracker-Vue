@@ -1,17 +1,17 @@
 <template>
-    <h3>Add new transaction</h3>
+    <h3>{{ $t('add_new_transaction') }}</h3>
     <form id="form" @submit.prevent="onSubmit">
       <div class="form-control">
-        <label for="text">Text</label>
-        <input type="text"  id="text" v-model="text" placeholder="Enter text ..."/>
+        <label for="text">{{$t('text')}}</label>
+        <input type="text"  id="text" v-model="text" :placeholder="$t('en_text')"/>
 
       </div>
       <div class="form-control">
-        <label for="amount">Amount <br/>
-(negative - expense , positive - income)
+        <label for="amount">{{$t('amount')}}<br/>
+{{$t('val')}}
         </label>
-        <input type="text"  id="amount" v-model="amount" placeholder="Enter amount ..."/>
-        <button class="btn">Add Transaction</button>
+        <input type="text"  id="amount" v-model="amount" :placeholder="$t('en_text')"/>
+        <button class="btn">{{ $t('add_btn') }}</button>
         
       </div>
     </form>

@@ -1,0 +1,15 @@
+{
+    "Expense_Tracker":"Expense Tracker",
+    "income":"INCOME",
+    "Balance":"Your Balance",
+    "expense": "EXPENSE",
+    "history":"HISTORY",
+    "add_new_transaction":"Add new transaction",
+    "text":"Text",
+    "amount":"Amount",
+    "val":"(negative - expense , positive - income)",
+    "en_text":"Enter text ...",
+    "add_btn":"Add Transaction"
+
+  
+}

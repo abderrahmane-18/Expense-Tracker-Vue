@@ -1,13 +1,13 @@
 <template>
     <div class="inc-exp-container">
         <div>
-            <h4>Income</h4>
+            <h4>{{ $t('income') }}</h4>
             <div id="money-plus" class="money plus">+${{income}}</div>
 
         </div>
         <div>
             <h4>
-                Expense 
+                {{$t('expense')}}
             </h4>
             <div id="money-minus" class="money minus">-${{ expense }}  </div>
                 

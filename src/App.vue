@@ -1,5 +1,13 @@
 <template>
-<Header/>
+    <nav :dir="$i18n.locale=='ar'?'rtl':'ltr'">
+        <div class="locale-changer">
+    <select v-model="$i18n.locale">
+    <option v-for="locale in $i18n.availableLocales" :key="`locale -${locale}`">
+{{ locale }}        
+    </option>
+    </select>
+</div>
+        <Header/>
 
 
 
@@ -9,7 +17,9 @@
 <IncomeExpenses :income="+ income" :expense="+ expense"/>
 <ListTransaction  :transactions="transactions" @TransactionDeleted="handleDeletedTransaction"/>
 <AddTransaction @transactionSubmitted="handleSubmittedTransaction"/>
+
 </div>
+</nav>
 </template>
 <script setup>
 
@@ -20,14 +30,21 @@ import  ListTransaction from './components/ListTransaction.vue';
 import  AddTransaction from './components/AddTransaction.vue';
 import {useToast} from 'vue-toastification';
 
-import {ref,computed,onMounted} from 'vue';
+import {ref,computed,onMounted,watch} from 'vue';
 const toast =useToast();
+const locale = ref(localStorage.getItem('locale') || 'en');
+watch(locale, (newLocale) => {
+    $i18n.locale = newLocale;
+
+      localStorage.setItem('locale', newLocale);
+    });
 onMounted(()=>{
 const savedTransactions=JSON.parse(localStorage.getItem('transactions'));
 if(savedTransactions)
 {
     transactions.value=savedTransactions;
 }
+
 });
 const transactions=ref([
                 {id:1,text:'book1',amount:-19.99},

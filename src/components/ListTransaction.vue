@@ -1,5 +1,5 @@
 <template>
-  <h4>History</h4>
+  <h4>{{$t('history')}}</h4>
 <ul id="list" class="list ">
     <li  v-for="transaction in transactions" :key="transaction.id" :class="transaction.amount < 0 ? 'minus':'plus'">
         {{ transaction.text }}
